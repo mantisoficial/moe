@@ -2,7 +2,7 @@
 	class Users extends CI_Controller{
 		// Register user
 		public function register(){
-			$data['title'] = 'Sign Up';
+			$data['title'] = 'Cadastrar Usuário';
 
 			$this->form_validation->set_rules('name', 'Name', 'required');
 			$this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
@@ -21,15 +21,15 @@
 				$this->user_model->register($enc_password);
 
 				// Set message
-				$this->session->set_flashdata('user_registered', 'You are now registered and can log in');
+				$this->session->set_flashdata('user_registered', 'Você está registrado e agora já pode fazer login');
 
-				redirect('posts');
+				redirect('pages/view');
 			}
 		}
 
 		// Log in user
 		public function login(){
-			$data['title'] = 'Sign In';
+			$data['title'] = 'Fazer Login';
 
 			$this->form_validation->set_rules('username', 'Username', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
@@ -59,12 +59,12 @@
 					$this->session->set_userdata($user_data);
 
 					// Set message
-					$this->session->set_flashdata('user_loggedin', 'You are now logged in');
+					$this->session->set_flashdata('user_loggedin', 'Você está logado');
 
-					redirect('posts');
+					redirect('pages/view/vagas');
 				} else {
 					// Set message
-					$this->session->set_flashdata('login_failed', 'Login is invalid');
+					$this->session->set_flashdata('login_failed', 'Login é inválido');
 
 					redirect('users/login');
 				}		
@@ -79,14 +79,14 @@
 			$this->session->unset_userdata('username');
 
 			// Set message
-			$this->session->set_flashdata('user_loggedout', 'You are now logged out');
+			$this->session->set_flashdata('user_loggedout', 'Você está deslogado');
 
 			redirect('users/login');
 		}
 
 		// Check if username exists
 		public function check_username_exists($username){
-			$this->form_validation->set_message('check_username_exists', 'That username is taken. Please choose a different one');
+			$this->form_validation->set_message('check_username_exists', 'Esse nome de usuário já existe');
 			if($this->user_model->check_username_exists($username)){
 				return true;
 			} else {
@@ -96,7 +96,7 @@
 
 		// Check if email exists
 		public function check_email_exists($email){
-			$this->form_validation->set_message('check_email_exists', 'That email is taken. Please choose a different one');
+			$this->form_validation->set_message('check_email_exists', 'Esse email já está cadastrado');
 			if($this->user_model->check_email_exists($email)){
 				return true;
 			} else {

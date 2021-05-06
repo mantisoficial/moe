@@ -1,2 +1,2 @@
 <h2><?= $title ?></h2>
-<p>Welcome to the ciBlog application</p>
+<p>Bem vindos ao Mural de Oportunidade de Estágio</p>

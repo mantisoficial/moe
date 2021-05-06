@@ -1,2 +1,2 @@
 <h2><?= $title ?></h2>
-<p>This is ciBlog version 1.0</p>
+<p>Esse é o Mural de Oportunidades de Estágio (MOE) versão 1.0</p>
