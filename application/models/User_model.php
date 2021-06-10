@@ -3,10 +3,11 @@
 		public function register($enc_password){
 			// User data array
 			$data = array(
+				'type' => $this->input->post('type'),
 				'name' => $this->input->post('name'),
 				'email' => $this->input->post('email'),
                 'username' => $this->input->post('username'),
-                'password' => $enc_password,
+                'password' => $enc_password
 			);
 
 			// Insert user

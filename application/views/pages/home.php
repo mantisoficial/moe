@@ -1,2 +1,2 @@
 <h2><?= $title ?></h2>
-<p>Bem vindos ao Mural de Oportunidade de Estágio</p>
+<p>Bem vindo ao Mural de Oportunidade de Estágio (MOE)</p>

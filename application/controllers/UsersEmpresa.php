@@ -1,15 +1,17 @@
 <?php
-class Users extends CI_Controller
+class UsersEmpresa extends CI_Controller
 {
 	// Register user
 	public function register()
 	{
-		$data['title'] = 'Registrar-se';
+		$data['title'] = 'Sign Up';
 
 		$this->form_validation->set_rules('type', 'Type', 'required');
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('username', 'Username', 'required|callback_check_username_exists');
 		$this->form_validation->set_rules('email', 'Email', 'required|callback_check_email_exists');
+        $this->form_validation->set_rules('nome_empresa', 'Nome_empresa', 'required');
+        $this->form_validation->set_rules('endereco_empresa', 'Endereco_empresa', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		$this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
 
@@ -33,7 +35,7 @@ class Users extends CI_Controller
 	// Log in user
 	public function login()
 	{
-		$data['title'] = 'Fazer Login';
+		$data['title'] = 'Sign In';
 
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');

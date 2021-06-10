@@ -11,7 +11,7 @@
 			// Init Pagination
 			$this->pagination->initialize($config);
 
-			$data['title'] = 'Latest Posts';
+			$data['title'] = 'Últimas vagas';
 
 			$data['posts'] = $this->post_model->get_posts(FALSE, $config['per_page'], $offset);
 
@@ -42,7 +42,7 @@
 				redirect('users/login');
 			}
 
-			$data['title'] = 'Create Post';
+			$data['title'] = 'Cadastrar Vaga';
 
 			$data['categories'] = $this->post_model->get_categories();
 
@@ -84,6 +84,10 @@
 			// Check login
 			if(!$this->session->userdata('logged_in')){
 				redirect('users/login');
+			}
+
+			if(!$this->session->userdata('type' == 'empresa')){
+				redirect('posts');
 			}
 
 			$this->post_model->delete_post($id);

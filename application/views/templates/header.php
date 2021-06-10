@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Mural de Oportunidade de Estágio</title>
+  <title>MOE</title>
   <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
   <script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
@@ -17,6 +17,7 @@
         <ul class="nav navbar-nav">
           <li><a href="<?php echo base_url(); ?>">Home</a></li>
           <li><a href="<?php echo base_url(); ?>about">Sobre</a></li>
+          <li><a href="<?php echo base_url(); ?>posts">Vagas</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <?php if (!$this->session->userdata('logged_in')) : ?>
@@ -24,6 +25,7 @@
             <li><a href="<?php echo base_url(); ?>users/register">Registrar</a></li>
           <?php endif; ?>
           <?php if ($this->session->userdata('logged_in')) : ?>
+            <li><a href="<?php echo base_url(); ?>posts/create">Cadastrar vaga</a></li>
             <li><a href="<?php echo base_url(); ?>users/logout">Logout</a></li>
           <?php endif; ?>
         </ul>
@@ -32,4 +34,7 @@
   </nav>
 
   <div class="container">
-    
+  
+  
+
+   

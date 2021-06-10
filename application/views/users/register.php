@@ -5,16 +5,16 @@
 	<div class="col-md-4 col-md-offset-4">
 		<h1 class="text-center"><?= $title; ?></h1>
 		<div class="form-group">
-		<label for="type">Tipo de Conta</label>
-		<select name="type">
-			<option value="" selected disabled hidden>Escolha uma opção</option>
-			<option value="empregador">Empregador</option>
-			<option value="estagiário">Estagiário</option>
-		</select>
+			<label>Selecione sua situação:</label>
+			<select name="type" class="form-label mt-4">
+				<option value="" disabled selected>Escolha uma opção</option>
+				<option value="estudante">Estudante</option>
+				<option value="empresa">Empresa</option>
+			</select>
 		</div>
 		<div class="form-group">
 			<label>Nome:</label>
-			<input type="text" class="form-control" name="name" placeholder="Name">
+			<input type="text" class="form-control" name="name" placeholder="Nome">
 		</div>
 		<div class="form-group">
 			<label>Email:</label>
@@ -22,17 +22,17 @@
 		</div>
 		<div class="form-group">
 			<label>Nome de usuário:</label>
-			<input type="text" class="form-control" name="username" placeholder="Username">
+			<input type="text" class="form-control" name="username" placeholder="Nome de usuário">
 		</div>
 		<div class="form-group">
 			<label>Senha:</label>
-			<input type="password" class="form-control" name="password" placeholder="Password">
+			<input type="password" class="form-control" name="password" placeholder="Senha">
 		</div>
 		<div class="form-group">
 			<label>Confirmar senha:</label>
-			<input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+			<input type="password" class="form-control" name="password2" placeholder="Confirmar Senha">
 		</div>
-		<button type="submit" class="btn btn-primary btn-block">Enviar</button>
+		<button type="submit" class="btn btn-primary btn-block">Registrar</button>
 	</div>
 </div>
 <?php echo form_close(); ?>
